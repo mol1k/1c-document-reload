@@ -1,0 +1,103 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<Form xmlns="http://v8.1c.ru/8.3/xcf/logform" xmlns:app="http://v8.1c.ru/8.2/managed-application/core" xmlns:cfg="http://v8.1c.ru/8.1/data/enterprise/current-config" xmlns:dcscor="http://v8.1c.ru/8.1/data-composition-system/core" xmlns:dcsset="http://v8.1c.ru/8.1/data-composition-system/settings" xmlns:ent="http://v8.1c.ru/8.1/data/enterprise" xmlns:lf="http://v8.1c.ru/8.2/managed-application/logform" xmlns:style="http://v8.1c.ru/8.1/data/ui/style" xmlns:sys="http://v8.1c.ru/8.1/data/ui/fonts/system" xmlns:v8="http://v8.1c.ru/8.1/data/core" xmlns:v8ui="http://v8.1c.ru/8.1/data/ui" xmlns:web="http://v8.1c.ru/8.1/data/ui/colors/web" xmlns:win="http://v8.1c.ru/8.1/data/ui/colors/windows" xmlns:xr="http://v8.1c.ru/8.3/xcf/readable" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" version="2.20">
+	<AutoCommandBar name="ФормаКоманднаяПанель" id="-1"/>
+	<ChildItems>
+		<InputField name="Документ" id="4">
+			<DataPath>Объект.Документ</DataPath>
+			<ExtendedEditMultipleValues>true</ExtendedEditMultipleValues>
+			<ContextMenu name="ДокументКонтекстноеМеню" id="5"/>
+			<ExtendedTooltip name="ДокументРасширеннаяПодсказка" id="6"/>
+		</InputField>
+		<InputField name="Файл" id="1">
+			<DataPath>Объект.Файл</DataPath>
+			<ChoiceButton>true</ChoiceButton>
+			<ExtendedEditMultipleValues>true</ExtendedEditMultipleValues>
+			<ContextMenu name="ФайлКонтекстноеМеню" id="2"/>
+			<ExtendedTooltip name="ФайлРасширеннаяПодсказка" id="3"/>
+			<Events>
+				<Event name="OnChange">ФайлПриИзменении</Event>
+				<Event name="StartChoice">ФайлНачалоВыбора</Event>
+			</Events>
+		</InputField>
+		<Button name="ПросмотрФайла" id="11">
+			<Type>Hyperlink</Type>
+			<CommandName>Form.Command.ПросмотрФайла</CommandName>
+			<ExtendedTooltip name="ПросмотрФайлаРасширеннаяПодсказка" id="12"/>
+		</Button>
+		<Button name="ВыгрузитьДокумент" id="7">
+			<Type>UsualButton</Type>
+			<Representation>PictureAndText</Representation>
+			<CommandName>Form.Command.ВыгрузитьДокумент</CommandName>
+			<Picture>
+				<xr:Ref>CommonPicture.ПиктограммаТрендаРостУхудшается</xr:Ref>
+				<xr:LoadTransparent>true</xr:LoadTransparent>
+			</Picture>
+			<ExtendedTooltip name="ВыгрузитьДокументРасширеннаяПодсказка" id="8"/>
+		</Button>
+		<Button name="ЗагрузитьДокумент" id="9">
+			<Type>UsualButton</Type>
+			<Representation>PictureAndText</Representation>
+			<CommandName>Form.Command.ЗагрузитьДокумент</CommandName>
+			<Picture>
+				<xr:Ref>CommonPicture.ПиктограммаТрендаПадениеУлучшается</xr:Ref>
+				<xr:LoadTransparent>true</xr:LoadTransparent>
+			</Picture>
+			<ExtendedTooltip name="ЗагрузитьДокументРасширеннаяПодсказка" id="10"/>
+		</Button>
+	</ChildItems>
+	<Attributes>
+		<Attribute name="Объект" id="1">
+			<Type>
+				<v8:Type>cfg:ExternalDataProcessorObject.ПерегрузкаДокумента</v8:Type>
+			</Type>
+			<MainAttribute>true</MainAttribute>
+		</Attribute>
+	</Attributes>
+	<Commands>
+		<Command name="ВыгрузитьДокумент" id="1">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Выгрузить документ</v8:content>
+				</v8:item>
+			</Title>
+			<ToolTip>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Выгрузить документ</v8:content>
+				</v8:item>
+			</ToolTip>
+			<Action>ВыгрузитьДокумент</Action>
+		</Command>
+		<Command name="ЗагрузитьДокумент" id="2">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Загрузить документ</v8:content>
+				</v8:item>
+			</Title>
+			<ToolTip>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Загрузить документ</v8:content>
+				</v8:item>
+			</ToolTip>
+			<Action>ЗагрузитьДокумент</Action>
+		</Command>
+		<Command name="ПросмотрФайла" id="3">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Просмотр файла</v8:content>
+				</v8:item>
+			</Title>
+			<ToolTip>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Просмотр файла</v8:content>
+				</v8:item>
+			</ToolTip>
+			<Action>ПросмотрФайла</Action>
+		</Command>
+	</Commands>
+</Form>
